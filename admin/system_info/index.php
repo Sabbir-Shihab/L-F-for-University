@@ -25,6 +25,11 @@
 					<label for="short_name" class="control-label">System Short Name</label>
 					<input type="text" class="form-control form-control-sm" name="short_name" id="short_name" value="<?php echo  $_settings->info('short_name') ?>">
 				</div>
+				<div class="form-group">
+					<label for="student_experience_video_url" class="control-label">Homepage YouTube Video Link</label>
+					<input type="url" class="form-control form-control-sm" name="student_experience_video_url" id="student_experience_video_url" value="<?php echo htmlspecialchars($_settings->info('student_experience_video_url') ?: '') ?>" placeholder="https://www.youtube.com/watch?v=...">
+					<small class="text-muted"><i>This video appears above the User Guidelines section on the homepage.</i></small>
+				</div>
 			<!-- <div class="form-group">
 				<label for="" class="control-label">Welcome Content</label>
 	             <textarea name="content[welcome]" id="" cols="30" rows="2" class="form-control summernote">< ?php echo  is_file(base_app.'welcome.html') ? file_get_contents(base_app.'welcome.html') : "" ?></textarea>

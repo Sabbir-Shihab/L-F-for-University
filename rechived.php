@@ -24,7 +24,7 @@
                                             </div>
                                             <div class="card-body pt-3">
                                                 <h4 class="card-title"><?= $row['title'] ?></h4>
-                                                <span class="badge bg-success">Owner Found</span>
+                                                <span class="badge bg-success"><?= ($row['item_type'] ?? 'found') == 'missing' ? 'Finder Found' : 'Owner Found' ?></span>
                                                 <small class="text-muted d-block mt-2">Received on <?= isset($row['approved_at']) ? date("F d, Y g:i A", strtotime($row['approved_at'])) : 'N/A' ?></small>
                                                 <p class="mt-2 mb-1"><strong>Received by:</strong> <?= htmlspecialchars($row['received_by'] ?? 'N/A') ?></p>
                                                 <p class="mb-1"><strong>Contact:</strong> <?= htmlspecialchars($row['received_contact'] ?? 'N/A') ?></p>

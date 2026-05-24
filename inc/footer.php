@@ -63,12 +63,12 @@
           <div class="col-lg-3 col-md-12 uu-footer-connect">
             <h5>Connect With Us</h5>
             <div class="uu-footer-social d-flex align-items-center gap-2">
-              <a href="https://www.facebook.com/uttarauniversity" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.youtube.com/user/UttaraUniversity" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-              <a href="https://www.linkedin.com/school/uttara-university/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-              <a href="https://www.uttara.ac.bd/" aria-label="Website"><i class="bi bi-globe2"></i></a>
-              <a href="mailto:info@uttara.ac.bd" aria-label="Email"><i class="bi bi-envelope"></i></a>
-              <a href="tel:09640888272" aria-label="Phone"><i class="bi bi-telephone"></i></a>
+              <a href="https://www.facebook.com/UttaraUniversity/" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/uttarauniversity/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.youtube.com/@UttaraUniversityofficial" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="https://www.linkedin.com/school/uttarauniversitybd" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://www.tiktok.com/@uttarauniversity" target="_blank" rel="noopener" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+              <a href="https://www.uttara.ac.bd/" target="_blank" rel="noopener" aria-label="Website"><i class="bi bi-globe2"></i></a>
             </div>
           </div>
 

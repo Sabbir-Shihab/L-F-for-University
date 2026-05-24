@@ -64,7 +64,47 @@ if(preg_match('/^This platform is created to help students, faculty members, and
     $display_intro = 'Helpful practices for reporting, finding, and recovering belongings quickly and securely within the university community.';
 }
 $highlighted_heading = preg_replace('/(Guidelines)$/i', '<span>$1</span>', htmlspecialchars($display_heading));
+$student_video_url = trim((string)$_settings->info('student_experience_video_url'));
+$student_video_id = '';
+if($student_video_url !== ''){
+    $parts = parse_url($student_video_url);
+    if(!empty($parts['host'])){
+        $host = strtolower(preg_replace('/^www\./', '', $parts['host']));
+        if($host === 'youtu.be' && !empty($parts['path'])){
+            $student_video_id = trim($parts['path'], '/');
+        } elseif(in_array($host, ['youtube.com', 'm.youtube.com'], true)){
+            if(!empty($parts['query'])){
+                parse_str($parts['query'], $query);
+                $student_video_id = $query['v'] ?? '';
+            }
+            if($student_video_id === '' && !empty($parts['path']) && preg_match('~/(embed|shorts)/([^/?#]+)~', $parts['path'], $match)){
+                $student_video_id = $match[2];
+            }
+        }
+    }
+    $student_video_id = preg_match('/^[A-Za-z0-9_-]{6,}$/', $student_video_id) ? $student_video_id : '';
+}
 ?>
+<section class="student-experience-section">
+    <div class="student-experience-section__copy">
+        <h2>Students' Experience</h2>
+        <p>Watch how students can use the lost and found platform to report, search, and recover belongings with confidence.</p>
+    </div>
+    <div class="student-experience-section__video">
+        <?php if($student_video_id !== ''): ?>
+        <iframe
+            src="https://www.youtube.com/embed/<?= htmlspecialchars($student_video_id) ?>"
+            title="Students' Experience"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        <?php else: ?>
+        <div class="student-experience-section__placeholder">
+            <i class="bi bi-play-fill"></i>
+        </div>
+        <?php endif; ?>
+    </div>
+</section>
 <section class="welcome-showcase">
     <div class="welcome-showcase__content page-content">
         <div class="welcome-showcase__label">

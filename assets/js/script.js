@@ -42,6 +42,11 @@ $(document).ready(function() {
     });
 
     // Login
+    if ($('#login-frm').length > 0) {
+        localStorage.removeItem('admin_login_remember');
+        $('#login-frm [name="username"], #login-frm [name="password"]').val('');
+    }
+
     $('#login-frm').submit(function(e) {
             e.preventDefault()
             start_loader()
